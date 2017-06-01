@@ -1,0 +1,27 @@
+$md: 660px;
+$lg: 1024px;
+$xlg: 1300px;
+
+@mixin from($breakpoint) {
+  @if $breakpoint == medium {
+    @media (min-width: $md) { @content; }
+  }
+  @if $breakpoint == large {
+    @media (min-width: $lg) { @content; }
+  }
+  @if $breakpoint == xlarge {
+    @media (min-width: $xlg) { @content; }
+  }
+}
+
+@mixin to($breakpoint) {
+  @if $breakpoint == medium {
+    @media (max-width: $md) { @content; }
+  }
+  @if $breakpoint == large {
+    @media (max-width: $lg) { @content; }
+  }
+  @if $breakpoint == xlarge {
+    @media (max-width: $xlg) { @content; }
+  }
+}
