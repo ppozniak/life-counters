@@ -14,10 +14,20 @@ This was originally developed at https://codepen.io/ppozniak95/pen/vgZXed
 * Voice commands (currently one [add])
 
 ## TODO
-* Groups
+* Local dependencies
 * Modifying
+* Moving around
 * Release native app
 * Better voice control
+* Localstorage/database
+* LHS menu
+  * Settings
+    * Voice settings
+    * Theme
+    * Storage
+  * Themes
+  * Groups
+
 
 ## Build Setup
 

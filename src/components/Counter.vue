@@ -3,12 +3,12 @@
     <div class="card-panel counter__inner">
       <!-- Header -->
       <header class="counter__header">
-        <h2 v-show="heading" class="counter__heading">{{ heading }}</h2>
+        <h2 contenteditable="true" v-show="heading" class="counter__heading">{{ heading }}</h2>
         <button @click="menuOpen = !menuOpen" :class="['counter__menu-toggler btn btn-flat btn-small grey-text text-darken-4']">
             <i class="material-icons">{{ menuOpen ? 'close' : 'more_vert' }}</i>
         </button>
       </header>
-      <p v-show="description" class="counter__description grey-text text-darken-1">{{ description }}</p>
+      <p v-show="description" contenteditable="true" class="counter__description grey-text text-darken-1">{{ description }}</p>
 
       <!-- - num + -->
       <div class="counter__main">
@@ -170,6 +170,7 @@ export default {
     flex-wrap: wrap;
     align-items: stretch;
   }
+
   @include from(xlarge) {
     max-width: 1200px;
     margin: 0 auto;
@@ -185,6 +186,7 @@ export default {
 }
 
 .counter__inner {
+  position: relative;
   @include from(medium) {
     display: flex;
     flex-direction: column;
@@ -200,10 +202,14 @@ export default {
 .counter__heading {
   margin: 0 0 .35rem;
   font-size: 1.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .counter__menu-toggler {
+  position: relative;
   margin-left: auto;
+  z-index: 10;
 }
 
 .counter__description {
